@@ -28,10 +28,7 @@ var _mm = {
                 /*请求数据错误*/
                 else if (1 === res.status) {
                     typeof param.error === 'function' && param.error(res.msg);
-
-
                 }
-
             },
             error   : function (err) {
                 typeof param.error === 'function' && param.error(err.statusText);
@@ -52,7 +49,7 @@ var _mm = {
     /*渲染HTML模板*/
     renderHtml: function (htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate);
-        result = template.render(data);
+        var result = template.render(data);
         return result;
     },
 
@@ -85,7 +82,7 @@ var _mm = {
 
     /*统一登录处理*/
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
 
     /*跳回主页*/

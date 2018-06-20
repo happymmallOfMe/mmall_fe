@@ -84,3 +84,21 @@ input[type='checkbox'] {
     background: url(../../image/icon/loading.jpg) no-repeat;
     opacity: 0.6;
 }
+
+/*panel样式*/
+.panel {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+.panel .panel-title {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+    border-bottom: 1px solid #eeeeee;
+}
+.panel .panel-body {
+    padding: 10px;
+    overflow: hidden;
+}

@@ -21,7 +21,7 @@ var nav = {
         });
         // 注册点击事件
         $('.js-register').click(function () {
-            window.location.href = './register.html';
+            window.location.href = './user-register.html';
         });
         // 退出点击事件
         $('.js-logout').click(function () {
@@ -34,15 +34,13 @@ var nav = {
                 }
             );
         });
-
-
     },
     // 加载用户信息
     loadUerInfo: function () {
         _user.checkLogin(
             function (res) {
                 $('.user.not-login')
-                    .hide().sibling('.user.login')
+                    .hide().siblings('.user.login')
                     .show().find('.username').text(res.username);
             },
             function (errMsg) {
