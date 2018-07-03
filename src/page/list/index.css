@@ -1,0 +1,88 @@
+/*排序按钮样式*/
+.sort-con {
+    overflow: auto;
+
+}
+.sort-con .sort-item {
+    float: left;
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #cccccc;
+    margin-right: -1px;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+}
+.sort-con .sort-item.active {
+    background: #c60023;
+    border: 1px solid #c60023;
+    color: #ffffff;
+}
+.sort-con .sort-item .fa-sort-desc {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+/*升序时，淡化降序箭头*/
+.sort-con .sort-item.asc .fa-sort-desc {
+    opacity: 0.6;
+}
+/*降序时，淡化升序箭头*/
+.sort-con .sort-item.desc .fa-sort-asc {
+    opacity: 0.6;
+}
+
+/*列表容器样式*/
+.p-list-con {
+    margin-top: 15px;
+    margin-right: -20px;
+    overflow: hidden;
+}
+.p-list-con .p-item {
+    position: relative;
+    width: 180px;
+    float: left;
+    padding: 10px;
+    margin: 0 20px 20px 0;
+    background: #ffffff;
+}
+.p-list-con .p-item .p-img-con {
+    width: 180px;
+    height: 200px;
+}
+.p-list-con .p-item .p-img-con .p-img {
+    width: 100%;
+    height: 100%;
+}
+.p-list-con .p-item .p-price-con {
+    height: 30px;
+    line-height: 30px;
+}
+.p-list-con .p-item .p-price-con .p-price {
+    font-size: 16px;
+    color: #e7380d;
+}
+.p-list-con .p-item .p-name-con {
+    height: 40px;
+    overflow: hidden;
+}
+.p-list-con .p-item .p-name-con .p-name {
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #666666;
+    text-decoration: none;
+}
+/*商品列表页未加载出的错误提示信息样式*/
+.err-tip {
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eeeeee;
+}
+
