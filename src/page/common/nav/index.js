@@ -53,10 +53,10 @@ var nav = {
     loadCartCount: function () {
         _cart.getCartCount(
             function (res) {
-                $('.nav .cart-cont').text(res || 0);
+                $('.nav .cart-count').text(res || 0);
             },
             function (errMsg) {
-                $('.nav .cart-cont').text(0);
+                $('.nav .cart-count').text(0);
             }
         );
     }
