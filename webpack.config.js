@@ -11,6 +11,7 @@ var getHtmlConfig = function (name, title) {
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        favicon: 'favicon.ico',
         title: title,
         inject: true,
         hash: true,
@@ -36,11 +37,12 @@ var config = {
         'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
         'user-pass-update': ['./src/page/user-pass-update/index.js'],
         'result': ['./src/page/result/index.js'],
+        'about': ['./src/page/about/index.js'],
     },
     output: {
         filename: 'js/[name].js',
         path: __dirname + '/dist/',
-        publicPath: '/dist/'
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/'
     },
     externals: {
         'jquery' : 'window.jQuery',
@@ -77,7 +79,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于mmall'))
     ],
     module: {
         loaders: [
@@ -87,18 +90,23 @@ var config = {
             },
             {
                 test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
-                loader: 'url-loader?limit=100&name=/resource/[name].[ext]'
+                loader: 'url-loader?limit=100&name=resource/[name].[ext]'
             },
             {
                 test: /\.string$/,
-                loader: 'html-loader'
+                loader: 'html-loader',
+                query : {
+                    minimize : true,
+                    removeAttributeQuotes: false
+                }
+                // removeAttributeQuotes: false的作用是做代码压缩时不去掉属性值的引号
             }
         ]
 
     }
 
 };
-
+// 如果是开发环境，则进行下面的配置
 if ('dev' === WEBPACK_ENV) {
     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
