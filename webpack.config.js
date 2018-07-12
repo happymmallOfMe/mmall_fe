@@ -42,7 +42,7 @@ var config = {
     output: {
         filename: 'js/[name].js',
         path: __dirname + '/dist/',
-        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/'
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.huanyumall.top/mmall_fe/dist/'
     },
     externals: {
         'jquery' : 'window.jQuery',

@@ -120,7 +120,6 @@ var _addressModal = {
         $citySelect.html(this.getSelectOption(cities));
 
         // 如果为更新地址操作，并且已有地址包含城市信息，做城市回填,
-        // 疑问：todo 当loadModal方法中存在this.loadCities()->致使loadCities方法调用了两次;为什么当第二次调用loadCities方法传入参数provinceName为空时，下句无法实现城市回填功能
         if (this.option.isUpdate && this.option.data.receiverCity) {
             $citySelect.val(this.option.data.receiverCity);
         }
