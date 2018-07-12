@@ -57,7 +57,6 @@ var page = {
 
     // 加载商品清单信息功能实现
     loadProductList: function() {
-        var _this = this;
         $('.product-con').html('<div class="loading"></div>');
         // 获取用户地址列表
         _order.getProductList(
