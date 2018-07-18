@@ -45,24 +45,24 @@ rm -rf ./dist
 #
 # 3.git 操作
 #
-echo -e "===========git checkout mmall_v1.0=========="
-git checkout mmall_v1.0
+echo -e "======git checkout mmall_v1.0======"
+sudo git checkout mmall_v1.0
 
-#echo -e "===========git fetch=========="
-#git fetch
+echo -e "==============git fetch============"
+sudo git fetch
 
-echo -e "===========git pull=========="
+echo -e "==============git pull============="
 sudo git pull
 
 
 #
 # 4.npm install & webpack
 #
-echo -e "===========npm install=========="
-npm install -- registry=https://registry.npm.taobao.org
+echo -e "============npm install============"
+npm install --registry=https://registry.npm.taobao.org
 
 # npm run dist
-echo -e "===========npm run dist=========="
+echo -e "============npm run dist==========="
 npm run dist
 
 
@@ -72,19 +72,15 @@ npm run dist
 if [ -d "./dist" ]
     then
     # backup dist
-    echo -e "===========dist backup=========="
+    echo -e "============dist backup============"
     mv $DIST_PATH$1/dist $DIST_PATH$1/dist.backup
 
     # copy dist
-    echo -e "===========copy dist=========="
+    echo -e "============copy dist=============="
     cp -R ./dist $DIST_PATH$1
 
     # echo result
     echo -e "===========Deploy Success=========="
 else
-    echo -e "===========Deploy Error=========="
+    echo -e "===========Deploy Error============"
 fi
-
-
-
-
