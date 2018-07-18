@@ -46,9 +46,13 @@ var page = {
         nav.loadCartCount();
     },
 
-    // 数据匹配：检验后端响应数据是否为空
+    /**
+     * 数据匹配：检验后端响应数据是否为空
+     * 注意：购物车商品VO集合属性名称为cartProductVos，需与后端命名保持一致，如有需要，渲染文件中也需如此。
+     * @param data
+     */
     filter: function (data) {
-        data.notEmpty = !!data.cartProductVoList.length;
+        data.notEmpty = !!data.cartProductVos.length;
     },
 
     bindEvent: function () {
@@ -197,9 +201,6 @@ var page = {
             }
         });
     },
-
-
-
 
     // 移除购物车指定商品，支持批量删除（productId使用“，”隔开），向后端传输数据
     deleteCartProduct: function (productIds) {

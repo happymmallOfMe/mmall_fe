@@ -21,7 +21,11 @@ var page = {
         this.loadProductList();
     },
 
-    // 加载地址列表信息
+    /**
+     * 加载地址列表信息
+     *
+     * 注意：渲染文件templateAddress中的参数名称需与后端命名保持一致。
+     */
     loadAddressList: function() {
         var _this = this;
         $('.address-con').html('<div class="loading"></div>');
@@ -38,7 +42,10 @@ var page = {
         )
     },
 
-    // 处理地址列表中选中状态：使得地址区域更新后，保持选中地址不变，该地址已删除则除外
+    /**
+     * 处理地址列表中选中状态：使得地址区域更新后，保持选中地址不变，该地址已删除则除外
+     * @param data
+     */
     addressFilter: function (data) {
         if (this.data.selectedAddressId) {
             var selectedAddressIdFlag = false;
@@ -55,7 +62,11 @@ var page = {
         }
     },
 
-    // 加载商品清单信息功能实现
+    /**
+     * 加载商品清单信息功能实现
+     *
+     * 注意：渲染文件templateProduct中的orderItemVos需与后端命名保持一致。
+     */
     loadProductList: function() {
         $('.product-con').html('<div class="loading"></div>');
         // 获取用户地址列表
@@ -83,7 +94,10 @@ var page = {
             _this.data.selectedAddressId = $(this).data('id');
         });
 
-        // 2.订单提交功能实现
+        /**
+         * 2.订单提交功能实现
+         * 注意：res.orderNo中的orderNo需与后端命名保持一致，如有需要，渲染文件也许如此。
+         */
         $(document).on('click', '.order-submit', function () {
             var shippingId = _this.data.selectedAddressId;
             if (shippingId) {
@@ -114,7 +128,10 @@ var page = {
             });
         });
 
-        // 4.编辑地址功能实现
+        /**
+         * 4.编辑地址功能实现
+         * 注意：res.orderNo中的orderNo需与后端命名保持一致，如有需要，渲染文件也许如此。
+         */
         $(document).on('click', '.address-update', function (e) {
             e.stopPropagation();
             var shippingId = $(this).parents('.address-item').data('id');
@@ -151,8 +168,6 @@ var page = {
                 )
             }
         });
-
-
     },
 };
 

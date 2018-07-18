@@ -11,6 +11,9 @@ var Pagination = require('util/pagination/index.js');
 var templateIndex = require('./index.string');
 
 var page = {
+    /**
+     * 注意：方法getUrlParam中的参数名称，需与后端命名保持一致。
+     */
     data: {
         listParam: {
             keyword: _mm.getUrlParam('keyword') || '',
@@ -72,7 +75,11 @@ var page = {
 
         // 删除参数中多余的字段
         listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
-        // 请求接口
+
+        /**
+         * 请求接口
+         * 注意：res后所接属性名称需与后端命名保持一致，如有需要，渲染文件中也需如此。
+         */
         _product.getProductList(
             listParam,
             function (res) {

@@ -16,7 +16,11 @@ var page = {
         });
         this.loadUserInfo()
     },
-    // 加载用户信息，并填充
+
+    /**
+     * 加载用户信息，并填充
+     * 注意：渲染文件templateIndex中动态参数名称需与后端属性名称保持一致。
+     */
     loadUserInfo: function () {
         var userHtml = '';
         _user.getUserInfo(

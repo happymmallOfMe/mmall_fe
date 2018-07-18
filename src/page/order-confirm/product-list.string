@@ -7,7 +7,7 @@
         <th class="cell-total">小计</th>
     </tr>
 
-    {{#orderItemVoList}}
+    {{#orderItemVos}}
     <tr>
         <td class="cell-img">
             <a href="./detail.html?productId={{productId}}" target="_blank">
@@ -21,7 +21,7 @@
         <td class="cell-count">{{quantity}}</td>
         <td class="cell-total">￥{{totalPrice}}</td>
     </tr>
-    {{/orderItemVoList}}
+    {{/orderItemVos}}
 
 </table>
 <div class="submit-con">

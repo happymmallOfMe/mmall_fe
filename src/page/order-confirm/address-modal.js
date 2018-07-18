@@ -8,6 +8,11 @@ var _address = require('service/address-service.js');
 var templateAddressModal = require('./address-modal.string');
 
 
+/**
+ * 注意：data.后所接属性明后才能需与后端保持一致，如有需要，渲染文件也需如此。
+ * @type {{show: _addressModal.show, loadModal: _addressModal.loadModal, bindEvent: _addressModal.bindEvent, loadProvince: _addressModal.loadProvince, loadCities: _addressModal.loadCities, getSelectOption: (function(*): string), getReceiverInfo: (function(): {status: boolean}), hide: _addressModal.hide}}
+ * @private
+ */
 var _addressModal = {
     show: function (option) {
         // option的绑定

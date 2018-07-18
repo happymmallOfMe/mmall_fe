@@ -25,7 +25,10 @@ var page = {
         // 呈现加载过程
         $pageWrap.html('<div class="loading"></div>');
 
-        // 获取后端数据，并渲染页面
+        /**
+         * 获取后端数据，并渲染页面
+         * 渲染文件templateIndex中的qrUrl名称需与后端属性命名保持一致。
+         */
         _payment.getPaymentInfo(
             this.data.orderNumber,
             function (res) {

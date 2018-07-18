@@ -81,7 +81,11 @@ var page = {
             }
         });
 
-        // 输入新密码后下一步按钮点击事件
+        /**
+         * 输入新密码后下一步按钮点击事件
+         *
+         * 注意：formData对象中的参数名称需与后端相应属性名称保持一致。
+         */
         $('#submit-password').click(function () {
             var password = $.trim($('#password').val());
             var formData = {

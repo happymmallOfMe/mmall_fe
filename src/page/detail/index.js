@@ -7,6 +7,9 @@ var _cart = require('service/cart-service.js');
 var templateIndex = require('./index.string');
 
 var page = {
+    /**
+     * 注意方法getUrlParam中的参数为购物车商品id属性名称，需与后端命名保持一致。
+     */
     data: {
         productId: _mm.getUrlParam('productId') || '',
     },
@@ -75,7 +78,10 @@ var page = {
             }
         });
 
-        // 3.添加商品到购物车逻辑实现
+        /**
+         * 3.添加商品到购物车逻辑实现
+         * 注意：购物车商品id与相应数量的属性名称分别为productId和count，需与后端命名保持一致，如有需要，渲染文件中也需如此。
+         */
         $(document).on('click', '.cart-add', function () {
             _cart.addToCart(
                 {
@@ -92,7 +98,11 @@ var page = {
         })
     },
 
-    // 数据匹配：拆分小图地址字段为数组各项元素
+    /**
+     * 数据匹配：拆分小图地址字段为数组各项元素
+     * 注意：商品小图集合名称为subImages，需与后端命名一致，如有需要，渲染文件中也需如此。
+     * @param data 后端数据res
+     */
     filter: function (data) {
         data.subImages = data.subImages.split(',');
     }

@@ -44,7 +44,12 @@ var page = {
             }
         })
     },
-    // 提交表单
+
+    /**
+     * 提交表单
+     *
+     * 注意：formData对象中的参数名称需与后端相应属性名称保持一致，passwordConfirm除外。
+     */
     submit: function () {
         var formData = {
             username: $.trim($('#username').val()),

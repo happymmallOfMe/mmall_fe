@@ -47,7 +47,7 @@
                 <th class="cell-th cell-total">小计</th>
             </tr>
 
-            {{#orderItemVoList}}
+            {{#orderItemVos}}
             <tr>
                 <td class="cell cell-img">
                     <a href="./detail.html?productId={{productId}}" target="_blank">
@@ -61,7 +61,7 @@
                 <td class="cell cell-count">{{quantity}}</td>
                 <td class="cell cell-total">￥{{totalPrice}}</td>
             </tr>
-            {{/orderItemVoList}}
+            {{/orderItemVos}}
         </table>
         <p class="total">
             <span>订单总价：</span>

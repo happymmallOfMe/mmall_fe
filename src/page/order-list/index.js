@@ -34,7 +34,10 @@ var page = {
         // 呈现加载过程
         $listCon.html('<div class="loading"></div>');
 
-        // 获取后端数据，并渲染页面
+        /**
+         * 获取后端数据，并渲染页面
+         * 注意：res.后接的参数名称需与后端属性名称保持一致，渲染文件templateIndex中动态参数名称也需与后端属性名称保持一致。
+         */
         _order.getOrderList(
             this.data.listParam,
             function (res) {
@@ -77,7 +80,6 @@ var page = {
             }
         ));
     }
-
 };
 $(function () {
     page.init();

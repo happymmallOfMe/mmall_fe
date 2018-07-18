@@ -43,7 +43,10 @@ var page = {
         })
     },
 
-    // 加载订单列表
+    /**
+     * 加载订单列表
+     * 注意：res.后接的参数名称需与后端属性名称保持一致，渲染文件templateIndex中动态参数名称也需与后端属性名称保持一致。
+     */
     loadDetail: function () {
         var _this = this,
             orderDetailHtml = '',
@@ -68,7 +71,10 @@ var page = {
         );
     },
 
-    // 数据适配
+    /**
+     * 数据适配
+     * 注意：status需与后端属性名称保持一致
+     */
     dataFiler: function (data) {
         data.needPay = data.status === 10;
         data.isCancelable = data.status === 10;

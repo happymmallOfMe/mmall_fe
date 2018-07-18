@@ -15,6 +15,10 @@ var page = {
             name: 'user-pass-update'
         });
     },
+
+    /**
+     * 注意：_user.updatePassword方法传递的参数名称（passwordOld、passwordNew）需与后端相应参数属性名称保持一致。
+     */
     bindEvent: function () {
         var _this = this;
         // 点击提交按钮后的动作
