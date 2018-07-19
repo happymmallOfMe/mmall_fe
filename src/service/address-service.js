@@ -41,7 +41,7 @@ var _address = {
     // todo 对于自己的项目慈湖接口地址实为delete.do
     deleteAddress: function (shippingId, resolve, reject) {
         _mm.request({
-            url    : _mm.getServerUrl('/shipping/del.do'),
+            url    : _mm.getServerUrl('/shipping/delete.do'),
             data: {
                 shippingId: shippingId
             },
