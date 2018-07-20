@@ -1,0 +1,30 @@
+/*容器底色*/
+.page-wrap {
+    padding: 10px 0 25px 0;
+    background: #ffffff;
+}
+/*支付提示语样式*/
+.payment-tips {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666666;
+    text-align: center;
+}
+.payment-tips.enhance {
+    color: #c60023;
+}
+/*支付二维码容器样式*/
+.img-con {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+}
+/*二维码样式*/
+.img-con .qr-code {
+    width: 100%;
+    height: 100%;
+}
